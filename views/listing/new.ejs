@@ -1,0 +1,76 @@
+<%layout("/layout/boilerplate")%>
+<%-include("../includes/flash.ejs")%>
+
+    <h1>Create a new Listing</h1>
+    <div class="containers">
+        <form method="post" action="/listing" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="title" placeholder="enter title" required>
+                <div class="invalid-feedback">Add valid title</div>
+
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" class="form-control" id="description" rows="3" placeholder="enter description" required></textarea>
+                <div class="invalid-feedback">Add some short description </div>
+
+            </div>
+            
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" name="listing[image]" id="image" required>
+                <label class="input-group-text" for="image">Upload Listing Image</label>
+                <div class="invalid-feedback">Link/URL should be valid</div>
+            
+              </div>
+            <div class="row">
+                <div class="col">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" name="price" id="price" class="form-control" placeholder="enter price" aria-label="price" required>
+                    <div class="invalid-feedback">location Name should be valid</div>
+
+                </div>
+                <div class="col">
+                    <label for="country" class="form-label">country</label>
+                    <input type="text" name="country" id="country" class="form-control" placeholder="enter country" aria-label="country" required>
+                    <div class="invalid-feedback">Country Name should be valid</div>
+
+                </div>
+              </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label for="location" class="form-label">location</label>
+                    <input type="text" name="location" class="form-control" id="location" placeholder="enter location" required>
+                    <div class="invalid-feedback">Price should be valid</div>
+                </div>
+
+                <div class="col">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="category" class="form-select">
+                        <option >Choose...</option>
+                        <option >Farms</option>
+                        <option >Amazing pool</option>
+                        <option>Tinny homes</option>
+                        <option>Rooms</option>
+                        <option>Tree house</option>
+                        <option>Beach</option>
+                        <option>Historical house</option>
+                        <option>National park</option>
+                        <option>Doms</option>
+                        <option>Mansion</option>
+                        <option>Caves</option>
+                        <option >mountain</option>
+
+                    </select>
+                    <div class="invalid-feedback">Category is needed</div>
+                      
+                </div>
+            </div>
+            <br>
+            <div class="mb-3">
+                <button  class="btn btn-outline-info">Add</button>
+
+            </div>
+        </form>
+    </div>

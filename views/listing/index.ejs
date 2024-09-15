@@ -1,0 +1,42 @@
+
+<%layout("/layout/boilerplate")%>
+<%- include("../includes/filter.ejs")%>
+<%-include("../includes/flash.ejs")%>
+
+<div class="main">
+    <%for(let list of listing){%>
+        <a href="http://localhost:3000/listing/<%=list._id%>">
+        <div class="list">
+            <div class="pic">
+                <img src="<%=list.image.url%>" alt="<%=list.image.filename%>">
+            </div>
+            <br>
+            <h3><%=list.title%></h3>
+                <!-- <br> -->
+            <i>₹ <%=list.price.toLocaleString("en-IN")%>/night</i>
+            <i class="tex-info" style="color: rgba(0, 128, 0, 0.533); display: none;">&nbsp;  +18% GST</i>
+                
+        </div>
+    </a>
+    <%}%>
+            
+
+    
+</div>
+
+
+
+<script>
+    let texSwitch=document.querySelector("#flexSwitchCheckDefault")
+    texSwitch.addEventListener("click",()=>{
+        let tex=document.getElementsByClassName("tex-info");
+        for(let info of tex){
+            if(info.style.display!="inline"){
+                info.style.display="inline";
+            }
+            else{
+                info.style.display="none";
+            }
+        }
+    })
+</script>

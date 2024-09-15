@@ -1,0 +1,62 @@
+<%layout("/layout/boilerplate")%>
+<%-include("../includes/flash.ejs")%>
+
+<h1>Edit</h1>
+        
+    <div class="containers">
+        <form method="post" action="/listing/<%=list._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="title" placeholder="enter title" value="<%=list.title%>" required>
+                <div class="invalid-feedback">Title Require</div>
+            </div>
+            <br>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%=list.description%></textarea>
+                <div class="invalid-feedback">Description Require</div>
+    
+            </div>
+            <div class="mb-3">
+                <p>Uploaded image</p>
+                <img src="<%=list.image.url%>" height="130px" width="160px" alt="img">
+            </div>
+
+            <div class="input-group mb-3">
+        
+                <input type="file" class="form-control" name="listing[image]" id="image" >
+                <label class="input-group-text" for="image">Upload Listing Image</label>
+    
+            </div>
+           
+
+                    
+            <div class="row">
+                <div class="col">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" id="price" class="form-control" name="price" value="<%=list.price%>">
+                    <div class="invalid-feedback">Price Require</div>
+    
+                </div>
+                <div class="col">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" id="country" class="form-control" name="country" value="<%=list.country%>">
+
+                    <div class="invalid-feedback">Country Name Require</div>
+    
+                </div>
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="location" class="form-label">enter location</label>
+                <input type="text" name="location" class="form-control" id="location" placeholder="Another input placeholder" value="<%=list.location%>" required>
+                <div class="invalid-feedback">Location Require</div>
+    
+            </div>
+            <button class="btn btn-outline-success">Submit</button> 
+            
+    
+        </form>
+    </div>
